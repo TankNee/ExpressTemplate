@@ -1,11 +1,15 @@
+/**
+ * 判断对象是否为null或者空
+ * @param {object} obj
+ */
 const isNullOrEmpty = (obj) => {
-	if (Array.isArray(obj)) return obj.length == 0;
+	if (!obj) return true;
+	if (Array.isArray(obj)) return obj.length === 0;
 	switch (typeof obj) {
 		case "string":
 			return obj.length === 0;
 		case "object":
-			return Object.keys(obj).length == 0;
-		case "null":
+			return Object.keys(obj).length === 0;
 		case "undefined":
 			return true;
 		default:
